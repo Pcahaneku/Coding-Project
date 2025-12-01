@@ -4,11 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="style/css" href="/static/homepage.css">
     <title>Sign Up</title>
 </head>
 <body>
     
-<div></div>
+<div class="container"> <!--Users Forms-->
+    <h3>Welcome to RZA</h3>
+    <h1>Sign Up</h1>
+
+    <form action="{{url_for('add_users')}}" method="POST">
+        <input type="text" name="name" placeholder="FirstName" required>
+        <input type="text" name="name" placeholder="LastName" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="date" name="dob" placeholder="Date Of Birth" required>
+        
+        <input type="email" name="email" placeholder="Email Address" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
 
 
 </body>

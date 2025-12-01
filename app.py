@@ -28,22 +28,23 @@ def add_users():
         name = request.form['name']
         email = request.form['email']
         plain_password = request.form['password']
-        hashed_password = bcrypt_generate_hash(plain_password).decode('utf-8')
+        hashed_password = bcrypt.generate_password_hash(plain_password).decode('utf-8')
 
         dob = request.form['dob']
 
         if dob: 
             try:
-                dob = datetime.strptime(dob, '%Y-%m-%d').date() #Converts the date of birth string to a date object
+                dob = datetime.strptime(dob, '%Y-%M-%D').date() #Converts the date of birth string to a date object
             except ValueError:
                 return "Invalid date format. Please use YYYY-MM-DD."
+        user_option = request.form['user_option']
 
-        new_user = User(name=name, email=email, password=hashed_password, dob=dob)
+        new_user = User(name=name, email=email, password=hashed_password, dob=dob, user_option=user_option)
 
         try:
             db.session.add(new_user) 
             db.session.commit()
-            return redirect(url_for('index'))
+            return redirect(url_for('homepage'))
         except Exception as e:
             return f"An error occured: {e}"
 

@@ -4,23 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="style/css" href="/static/homepage.css">
+    <link rel="stylesheet" type="text/css" href="/static/homepage.css">
     <title>Sign Up</title>
 </head>
 <body>
     
 <div class="container"> <!--Users Forms-->
-    <h3>Welcome to RZA</h3>
-    <h1>Sign Up</h1>
+    <h3 class="text">Welcome to RZA</h3>
+    <h1 class="text">Sign Up</h1>
 
-    <form action="{{url_for('add_users')}}" method="POST">
+    <form class="forms" action="{{url_for('add_users')}}" method="POST">
         <input type="text" name="name" placeholder="FirstName" required>
         <input type="text" name="name" placeholder="LastName" required>
         <input type="email" name="email" placeholder="Email Address" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="date" name="dob" placeholder="Date Of Birth" required>
-        
-        <input type="email" name="email" placeholder="Email Address" required>
+        <h4>Are you registering as an Adult/ a School/ a Child</h4>
+        <input type="text" name="user_option" placeholder="Enter an Option">
+         
+        <p><a class="link" href="{{url_for('login')}}">Already have an account?</a></p>
         <button type="submit">Sign Up</button>
     </form>
 </div>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from models import db, User
 from datetime import datetime
 from flask_bcrypt import Bcrypt
@@ -35,11 +35,11 @@ def add_users():
 
         if dob: 
             try:
-                dob = datetime.strptime(dob, '%Y-%M-%D').date() #Converts the date of birth string to a date object
+                dob = datetime.strptime(dob, '%Y-%m-%d').date() #Converts the date of birth string to a date object
             except ValueError:
                 return "Invalid date format. Please use YYYY-MM-DD."
+        
         user_option = request.form['user_option']
-
         new_user = User(firstname=firstname, lastname=lastname, email=email, password=hashed_password, dob=dob, user_option=user_option)
 
         try:
@@ -49,9 +49,21 @@ def add_users():
         except Exception as e:
             return f"An error occured: {e}"
 
-@app.route('/login') #This leads users to the Login Page
+@app.route('/login', methods=['GET','POST']) #This leads users to the Login Page
 def login():
-    return render_template('login.html')
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        user = User.query.filter_by(email = email).first()
+
+        if user and bcrypt.check_password_hash(safari.passwrd, password):
+            session['user_id'] = user.id
+
+        return render_template('/login.html', message="You've been logged in successfuly", message_type="success")
+    else:
+        return render_template('/login.html', message="Login Failed, Please check your Email Address and Password and Try Again.", message_type="error")
+
 
 @app.route('/ticket') #This leads users to the Ticket Page
 def ticket():
@@ -60,6 +72,10 @@ def ticket():
 @app.route('/hotel') #This leads users to the Hotel Page
 def hotel():
     return render_template('hotel.html')
+
+@app.route('/guides') #This leads users to the Educational Guides Page Page
+def guides():
+    return render_template('guides.html')
 
 #This helps in running the app in debug mode. By reloading the server when code changes.
 if __name__ == '__main__':

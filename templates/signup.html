@@ -4,18 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/homepage.css">
+    <link rel="stylesheet" type="text/css" href="/static/signup.css">
     <title>Sign Up</title>
 </head>
 <body>
     
+    <nav>
+        <ul>
+            <li><a href="/templates/guides.html">GUIDES</a></li>
+            <li><a href="/templates/login.html">LOGIN</a></li>
+            <li><a href="/templates/ticket.html">TICKET</a></li>
+            <li><a href="/templates/hotel.html">HOTEL</a></li>
+            <h2>SIGN UP</h2>
+        </ul>
+    </nav>
+
+    <img class="image" src="/static/Images/deer.jpg">
+
 <div class="container"> <!--Users Forms-->
     <h3 class="text">Welcome to RZA</h3>
-    <h1 class="text">Sign Up</h1>
+    <h1 class="text"><b>Sign Up</b></h1>
 
-    <form class="forms" action="{{url_for('add_users')}}" method="POST">
-        <input type="text" name="name" placeholder="FirstName" required>
-        <input type="text" name="name" placeholder="LastName" required>
+    <form class="forms" action="{{url_for('signup')}}" method="POST">
+        <input type="text" name="firstname" placeholder="FirstName" required>
+        <input type="text" name="lastname" placeholder="LastName" required>
         <input type="email" name="email" placeholder="Email Address" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="date" name="dob" placeholder="Date Of Birth" required>
@@ -23,7 +35,7 @@
         <input type="text" name="user_option" placeholder="Enter an Option">
          
         <p><a class="link" href="{{url_for('login')}}">Already have an account?</a></p>
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn">Sign Up</button>
     </form>
 </div>
 

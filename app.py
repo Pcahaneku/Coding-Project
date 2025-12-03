@@ -22,10 +22,11 @@ def homepage():
 def signup():
     return render_template('signup.html') 
 
-@app.route('/add_users', methods=['POST'])
+@app.route('/signup', methods=['POST'])
 def add_users():
-    if request.form == 'POST':
-        name = request.form['name']
+    if request.method == 'POST':
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
         email = request.form['email']
         plain_password = request.form['password']
         hashed_password = bcrypt.generate_password_hash(plain_password).decode('utf-8')
@@ -39,12 +40,12 @@ def add_users():
                 return "Invalid date format. Please use YYYY-MM-DD."
         user_option = request.form['user_option']
 
-        new_user = User(name=name, email=email, password=hashed_password, dob=dob, user_option=user_option)
+        new_user = User(firstname=firstname, lastname=lastname, email=email, password=hashed_password, dob=dob, user_option=user_option)
 
         try:
             db.session.add(new_user) 
             db.session.commit()
-            return redirect(url_for('homepage'))
+            return render_template(url_for('login')) #directs users to the Login Page
         except Exception as e:
             return f"An error occured: {e}"
 
@@ -62,4 +63,4 @@ def hotel():
 
 #This helps in running the app in debug mode. By reloading the server when code changes.
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)

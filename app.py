@@ -45,7 +45,7 @@ def add_users():
         try:
             db.session.add(new_user) 
             db.session.commit()
-            return render_template(url_for('login')) #directs users to the Login Page
+            return render_template('/login.html') #directs users to the Login Page
         except Exception as e:
             return f"An error occured: {e}"
 
@@ -57,13 +57,12 @@ def login():
 
         user = User.query.filter_by(email = email).first()
 
-        if user and bcrypt.check_password_hash(safari.passwrd, password):
+        if user and bcrypt.check_password_hash(user.password, password):
             session['user_id'] = user.id
 
         return render_template('/login.html', message="You've been logged in successfuly", message_type="success")
     else:
         return render_template('/login.html', message="Login Failed, Please check your Email Address and Password and Try Again.", message_type="error")
-
 
 @app.route('/ticket') #This leads users to the Ticket Page
 def ticket():

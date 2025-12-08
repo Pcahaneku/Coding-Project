@@ -3,11 +3,13 @@ from models import db, User
 from datetime import datetime
 from flask_bcrypt import Bcrypt
 
+
 app = Flask(__name__) 
 bcrypt = Bcrypt(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///safari.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY']='avery_long_secret_random_key'
 
 db.init_app(app)
 
@@ -25,13 +27,14 @@ def signup():
 @app.route('/signup', methods=['POST'])
 def add_users():
     if request.method == 'POST':
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
-        email = request.form['email']
-        plain_password = request.form['password']
+
+        firstname = request.form.get['firstname']
+        lastname = request.form.get['lastname']
+        email = request.form.get['email']
+        plain_password = request.form.get['password']
         hashed_password = bcrypt.generate_password_hash(plain_password).decode('utf-8')
 
-        dob = request.form['dob']
+        dob = request.form.get['dob']
 
         if dob: 
             try:
@@ -39,7 +42,20 @@ def add_users():
             except ValueError:
                 return "Invalid date format. Please use YYYY-MM-DD."
         
-        user_option = request.form['user_option']
+        user_option = request.form.get['user_option']
+
+        #conn = sqlite3.connect('safari.db')
+        #c = conn.cursor()
+       #try:
+            #c.execute("INSERT INTO users (firstname, lastname, email, password, user_option) VALUES (?, ?, ?, ?, ?)",
+                    #(firstname, lastname, email, hashed_password, user_option))
+            #conn.commit()
+        #except sqlite3.IntegrityError:
+            #conn.close()
+            #return "Email already registered!"
+        #conn.close()
+        #return render_template(url_for('homepage'))
+
         new_user = User(firstname=firstname, lastname=lastname, email=email, password=hashed_password, dob=dob, user_option=user_option)
 
         try:
@@ -52,17 +68,19 @@ def add_users():
 @app.route('/login', methods=['GET','POST']) #This leads users to the Login Page
 def login():
     if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+
+        email = request.form.get('email')
+        password = request.form.get('password')
 
         user = User.query.filter_by(email = email).first()
 
-        if user and bcrypt.check_password_hash(user.password, password):
-            session['user_id'] = user.id
+        if user and bcrypt.check_password_hash(user.password, password):     
+            return render_template('/ticket.html', message="You've been logged in successfuly", message_type="success")
+        else:
+            return render_template('/ticket.html', message="Login Failed, Please check your Email Address and Password and Try Again.", message_type="error")
+        
+    return render_template('login.html')
 
-        return render_template('/login.html', message="You've been logged in successfuly", message_type="success")
-    else:
-        return render_template('/login.html', message="Login Failed, Please check your Email Address and Password and Try Again.", message_type="error")
 
 @app.route('/ticket') #This leads users to the Ticket Page
 def ticket():

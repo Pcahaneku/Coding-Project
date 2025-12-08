@@ -28,13 +28,13 @@ def signup():
 def add_users():
     if request.method == 'POST':
 
-        firstname = request.form.get['firstname']
-        lastname = request.form.get['lastname']
-        email = request.form.get['email']
-        plain_password = request.form.get['password']
+        firstname = request.form.get('firstname')
+        lastname = request.form.get('lastname')
+        email = request.form.get('email')
+        plain_password = request.form.get('password')
         hashed_password = bcrypt.generate_password_hash(plain_password).decode('utf-8')
 
-        dob = request.form.get['dob']
+        dob = request.form.get('dob')
 
         if dob: 
             try:
@@ -42,7 +42,7 @@ def add_users():
             except ValueError:
                 return "Invalid date format. Please use YYYY-MM-DD."
         
-        user_option = request.form.get['user_option']
+        user_option = request.form.get('user_option')
 
         #conn = sqlite3.connect('safari.db')
         #c = conn.cursor()
@@ -77,7 +77,7 @@ def login():
         if user and bcrypt.check_password_hash(user.password, password):     
             return render_template('/ticket.html', message="You've been logged in successfuly", message_type="success")
         else:
-            return render_template('/ticket.html', message="Login Failed, Please check your Email Address and Password and Try Again.", message_type="error")
+            return render_template('/login.html', message="Login Failed, Please check your Email Address and Password and Try Again.", message_type="error")
         
     return render_template('login.html')
 

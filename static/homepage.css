@@ -32,6 +32,7 @@ a:hover{
     color: #000000;
 }
 
+
 .header{
     background-color: #ffffff;
     color: #F5A754;
@@ -41,10 +42,175 @@ a:hover{
     padding: 10px;
 }
 
-.image{
+.image-container{
     display: flex;
-    margin-top: 5px;
-    height: 750%;
-    width: 770px;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 2550px;
+    height: 1000px;
+    
 }
 
+.image-container img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.welcome{
+    position: relative;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 12px;
+    margin-top: -750px;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.welcome-container{
+    height: 100%;
+}
+
+.btn{
+    position: relative;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: #F5A754;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn:hover{
+    background-color:#ffffff;
+    color: #000000;
+}
+
+.offer{
+    position: relative;
+    color: #000000;
+    margin-left: 350px;
+    margin-top: 240px;
+}
+
+.tickets-container{
+    background-color: #D0E6FF;
+    color: #000000;
+    padding: 200px;
+    padding-bottom: 30px;
+    width: 180px;
+    margin-left: 350px;
+    border-radius: 10px;
+    border: 1px solid #7CB9FF;
+    
+}
+
+.types{
+    color: #7CB9FF;
+    margin-top: -170px;
+    text-align: center;
+    font-size: 35px;
+    
+}
+
+.tickets{
+    display: block;
+    background-color: transparent;
+    color: #000000;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+.book{
+    display: block;
+    background-color: #7CB9FF;
+    color: #ffffff;
+    padding: 20px;
+    width: 150px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.book:hover{
+    background-color: #ffffff;
+    color: #7CB9FF;
+}
+
+.hotel-container{
+    background-color: #D0E6FF;
+    color: #000000;
+    padding: 200px;
+    padding-bottom: 30px;
+    width: 180px;
+    margin-left: 60%;
+    border-radius: 10px;
+    border: 1px solid #7CB9FF;
+    margin-top: -16%;
+}
+
+.bookings{
+    color: #7CB9FF;
+    margin-top: -170px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.hotels{
+    display: block;
+    background-color: transparent;
+    color: #000000;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+.htl{
+    display: block;
+    background-color: #7CB9FF;
+    color: #ffffff;
+    padding: 20px;
+    width: 150px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.htl:hover{
+    background-color: #ffffff;
+    color: #7CB9FF;
+}
+
+.about-container{
+    color: #000000;
+    
+}
+
+.us{
+    padding-top: 90px;
+    margin-bottom: -10px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.text{
+    font-weight: lighter;
+    text-align: center;
+    width: 700px;
+    margin-left: 37%;
+    font-size: x-large;
+}

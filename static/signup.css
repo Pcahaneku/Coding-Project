@@ -33,12 +33,13 @@ input{
     color: #F5A754;
     border-color: #F5A754;
     border-radius: 20px;
+    border-style: solid;
 }
 
 input::placeholder{
     color: #F5A754;
     font-size: 15px;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 ul{

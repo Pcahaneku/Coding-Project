@@ -9,7 +9,7 @@
 <body>
     
     <nav>
-        <ul>
+        <ul class="nav-links">
             <li><a href="/aboutus">ABOUT US</a></li>
             <li><a href="/guides">GUIDES</a></li>
             <li><a href="/ticket">TICKET</a></li>
@@ -19,7 +19,7 @@
         </ul>
     </nav>
 
-    <div >
+    <div>
         <div class="image-container">
             <img class="image" src="/static/Images/Zebras.jpg" alt="Image of Zebras">
         </div>
@@ -29,15 +29,16 @@
         </div>
 
         <div class="btn-container">
-            <a class="btn" href="/ticket"><b>BOOK NOW</a>
+            <a class="btn" href="/ticket"><b>BOOK NOW!</a>
         </div>
     </div>
 
     <div>
-        <div>
-            <h1 class="offer">What We Offer</h1>
-        </div>
+        <h1 class="offer">What We Offer</h1>
+    </div>
 
+    <!-- Ticket and Hotel Booking -->
+    <div class="container">
         <div class="tickets-container">
             <h2 class="types">Ticket Types</h2>
             <ul class="tickets">
@@ -47,29 +48,47 @@
                 <li> - </li>
                 <li>Annual Pass</li>
             </ul>
-            <a class="book" href="/ticket">Book Tickets</a>
+            <div class="book-container">
+                <a class="book" href="/ticket">Book Tickets</a>
+            </div>
         </div>
 
-        
-    </div>
-
-    <div>
         <div class="hotel-container">
             <h2 class="bookings">Hotel Bookings</h2>
             <ul class="hotels">
-                <li>Try our In-site Hotels</li>
+                <li>In-site Hotels</li>
                 <li> - </li>
-                <li>Discounts Included</li>
+                <li>Discounts Included to <br>memebers</li>
             </ul>
-            <a class="htl" href="/hotel">Book A Hotel</a>
+            <div class="htl-container">
+                <a class="htl" href="/hotel">Book A Hotel</a>
+            </div>
         </div>
     </div>
 
-    <div class="about-container">
-        <h2 class="us">About Us</h2>
-        <p class="text">Riget Zoo Adventures is Safari-Style wildlife zoo that offers  several things such as onsite hotel, educational visists for schools and students, with educatonal guides that supports their stay. </p>
+    <!-- About Us -->
+    <div class="about-section">
+        <div class="about-container"> 
+            <h2 class="us">About Us</h2>
+        </div>
+        <div class="text-container">
+            <p class="text">Riget Zoo Adventures is Safari-Style wildlife zoo that offers <br> several things such as onsite hotel, educational visits for schools and students, with educatonal guides that supports your stay. </p>
+        </div>
     </div>
 
+    <div class="contact-container">
+        <div class="CU">
+            <h2 class="contact">Contact Us</h2>
+        </div>
+        <div>
+            <p class="semi">We Are Here To Help!</p>
+            <p class="para">Here at Riget Zoo Adventures helping <br> our customers is at the heart of what we do. </p>
+        </div>
+
+        <div class="giraffe-container">
+            <img class="giraffe" src="/static/Images/Giraffe.jpg" alt="Giraffe">
+        </div>
+    </div>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ body{
     color: #F5A754;
 }
 
-ul{
+.nav-links{
     display: flex;
     position: sticky;
     top: 0;
@@ -21,7 +21,6 @@ ul li a, .header{
     color: #ffffff;
     padding: 14px;
     text-decoration: none;
-    
 }
 
 li a {
@@ -31,7 +30,6 @@ li a {
 a:hover{
     color: #000000;
 }
-
 
 .header{
     background-color: #ffffff;
@@ -44,7 +42,7 @@ a:hover{
 
 .image-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 20px;
     width: 2550px;
     height: 1000px;
@@ -52,10 +50,12 @@ a:hover{
 }
 
 .image-container img{
-    width: 100%;
-    height: 60%;
+    width: 90%;
+    height: 50%;
     object-fit: cover;
     opacity: 0.6;
+    margin-bottom: 0%;
+    
 }
 
 .welcome{
@@ -98,49 +98,55 @@ a:hover{
     position: relative;
     color: #000000;
     margin-left: 350px;
-    margin-top: 240px;
+    margin-top: 150px;
 }
 
+/*BOOKING CONTAINER*/
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    width: 100%;
+    gap: 50px;
+}
+
+/*TICKET BOOKING*/
 .tickets-container{
+    text-align: center;
     background-color: #D0E6FF;
     color: #000000;
-    padding: 200px;
-    padding-bottom: 30px;
-    width: 180px;
-    margin-left: 350px;
+    padding: 180px;
     border-radius: 10px;
     border: 1px solid #7CB9FF;
-    
 }
 
 .types{
     color: #7CB9FF;
-    margin-top: -170px;
+    margin-top: -100px;
     text-align: center;
     font-size: 35px;
-    
 }
 
 .tickets{
     display: block;
-    background-color: transparent;
+    list-style-type: none;
     color: #000000;
     font-weight: lighter;
-    text-align: center;
     margin-top: 5px;
     font-size: 22px;
 }
 
+.book-container{
+    margin-top: 50px;
+}
+
 .book{
-    display: block;
     background-color: #7CB9FF;
     color: #ffffff;
     padding: 20px;
-    width: 150px;
     text-decoration: none;
     border-radius: 4px;
-    text-align: center;
-    margin-top: 20px;
+    
 }
 
 .book:hover{
@@ -148,45 +154,45 @@ a:hover{
     color: #7CB9FF;
 }
 
+/* HOTEL BOOKING*/
 .hotel-container{
+    text-align: center;
     background-color: #D0E6FF;
     color: #000000;
-    padding: 200px;
+    padding: 180px;
     padding-bottom: 30px;
-    width: 180px;
-    margin-left: 60%;
     border-radius: 10px;
     border: 1px solid #7CB9FF;
-    margin-top: -16%;
 }
+
 
 .bookings{
     color: #7CB9FF;
-    margin-top: -170px;
+    margin-top: -100px;
     text-align: center;
     font-size: 35px;
 }
 
 .hotels{
     display: block;
-    background-color: transparent;
+    list-style-type: none;
     color: #000000;
     font-weight: lighter;
-    text-align: center;
     margin-top: 5px;
     font-size: 22px;
 }
 
+.htl-container{
+    margin-top: 50px;
+}
+
 .htl{
-    display: block;
     background-color: #7CB9FF;
     color: #ffffff;
     padding: 20px;
     width: 150px;
     text-decoration: none;
     border-radius: 4px;
-    text-align: center;
-    margin-top: 20px;
 }
 
 .htl:hover{
@@ -194,23 +200,62 @@ a:hover{
     color: #7CB9FF;
 }
 
-.about-container{
-    color: #000000;
+/*ABOUT US*/
+.about-section{
+    display: block;
+    margin-bottom: 90px;
     
 }
 
 .us{
-    padding-top: 90px;
     margin-bottom: -10px;
     text-align: center;
     font-weight: bolder;
     font-size: 45px;
+    color: #000000;
 }
 
 .text{
     font-weight: lighter;
     text-align: center;
-    width: 700px;
-    margin-left: 37%;
     font-size: x-large;
+    color: #000000;
+}
+
+/*CONTACT US*/
+.contact-container{
+    width: 100%;
+   
+}
+
+.contact{
+    
+    margin-left: 20px;
+    color: #000000;
+    font-size: 45px;
+    font-weight: bolder;
+    margin-bottom: -10px;
+}
+
+.semi{
+    margin-left: 20px;
+    font-weight:700;
+    font-size: x-large;
+    color: #000000;
+}
+
+.para{
+    margin-left: 20px;
+    font-weight: lighter;
+    font-size: x-large;
+    color: #000000;
+}
+
+.giraffe-container{
+  
+}
+
+.giraffe-conainer, .giraffe{
+     float: left;
+
 }

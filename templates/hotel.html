@@ -9,19 +9,46 @@
 <body>
     
     <nav>
-        <ul>
-            <li><a href="/">HOME</a></li>
+        <ul class="nav-links">
+            <div class="logo-container">
+                <img class="logo" src="/static/Images/Logo.png">
+            </div>
+            <li><a href="/#aboutus">ABOUT US</a></li>
+            <li><a href="/#contactus">CONTACT</a></li>
             <li><a href="/guides">GUIDES</a></li>
-            <li><a href="/ticket">TICKET</a></li>
-            <li><a href="/hotel">HOTEL</a></li>
-            <li><a href="/signup">SIGN UP</a></li>
-            <h2>LOGIN</h2>
-        </ul>
+            <h2 class="header">Hotel</h2>
+      </ul>
+    </nav>
   
         <div class="image-container">
             <img class="image" src="/static/Images/Animal.jpg" alt="An Image of a Lion">
         </div>
-    </nav>
+
+    <div class="welcome-container">
+            <h1 class="welcome">Book A Hotel</h1>
+    </div>
+
+    <div class="forms-container">
+        <form class="forms" action="{{url_for('hotel')}}" method="POST">
+            <p>Enter Your Check In Day</p>
+            <input type="date" name="dob" required>
+            <p>Enter Your Check Out Day</p>
+            <input type="date" name="dob" required>
+            <p>Enter Your Check In Time:</p>
+            <input type="time" name="time" required>
+            <p>Enter Your Check Out Time:</p>
+            <input type="time" name="time" required>
+            <br>
+            <div class="btn-container">
+            <button type="submit" class="btn">Book a Ticket</button>
+            </div>
+        </form>
+
+    {% if message %}
+        <p class="message {{message_type}}">{{message}}</p>
+    {%endif%}
+
+    </div>
 
 </body>
 </html>

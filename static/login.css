@@ -5,38 +5,53 @@ body{
     color: #F5A754;
 }
 
-ul{
+.nav-links{
     display: flex;
-    position: sticky;
-    top: 0;
     list-style-type:none;
     margin: 0;
     padding: 0;
     background-color: #F5A754;
     justify-content: right;
+    width: 100%;
 }
 
-ul li a, h2{
+ul li a, .header{
     display: flex;
     color: #ffffff;
-    padding: 14px;
+    padding: 15px;
     text-decoration: none;
     
 }
 
 li a {
     margin-top: 25px;
+    align-items: center;
 }
 
 a:hover{
     color: #000000;
 }
 
-h2{
+.header{
+    text-align: center;
     background-color: #ffffff;
     color: #F5A754;
     border-radius: 4px;
-    margin-right: 15px;
+    text-decoration: none;
+    padding: 25px 15px;
+    margin-right: 55px;
+    width: 90px;
+}
+
+.logo-container{
+    width: 100%;
+}
+
+.logo-container .logo{
+    width: 230px;
+    height: 230px;
+    margin-bottom: -60px;
+    margin-top: -60px;
 }
 
 .image{
@@ -46,24 +61,11 @@ h2{
     width: 770px;
 }
 
-/*.image-container{
-    margin-top: 5px;
-    width: 1000px;
-    height: 100px;
-}
-
-.image-container img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}*/
-
 .container {
-    display: block;
     position:absolute;
-    top: 30%;
-    right: 5%;
-    margin-right: 470px;
+    top: 35%;
+    right: 25%;
+    text-align: center;
 }
 
 .forms{
@@ -71,6 +73,7 @@ h2{
 }
 
 input{
+    display: block;
     width: 100%;
     padding: 15px;
     margin-top: 10px;
@@ -79,12 +82,14 @@ input{
     border-color: #F5A754;
     border-radius: 20px;
     border-style: solid;
+    font-size: 20px;
 }
 
 input::placeholder{
     color: #F5A754;
-    font-size: 15px;
+    font-size: 20px;
     opacity: 0.5;
+    text-align: center;
 }
 
 .link{
@@ -102,9 +107,7 @@ input::placeholder{
     cursor: pointer;
     display: inline-block;
     border-radius: 5px;
-    
 }
-
 
 .foot{
     display: flex;
@@ -115,3 +118,4 @@ input::placeholder{
     left: 0;
     bottom: 0;
 }
+

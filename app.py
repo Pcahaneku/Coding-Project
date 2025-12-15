@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from models import db, User
+from models import db, User, Ticket
 from datetime import datetime
 from flask_bcrypt import Bcrypt
-
 
 app = Flask(__name__) 
 bcrypt = Bcrypt(app)
@@ -44,18 +43,6 @@ def add_users():
         
         user_option = request.form.get('user_option')
 
-        #conn = sqlite3.connect('safari.db')
-        #c = conn.cursor()
-       #try:
-            #c.execute("INSERT INTO users (firstname, lastname, email, password, user_option) VALUES (?, ?, ?, ?, ?)",
-                    #(firstname, lastname, email, hashed_password, user_option))
-            #conn.commit()
-        #except sqlite3.IntegrityError:
-            #conn.close()
-            #return "Email already registered!"
-        #conn.close()
-        #return render_template(url_for('homepage'))
-
         new_user = User(firstname=firstname, lastname=lastname, email=email, password=hashed_password, dob=dob, user_option=user_option)
 
         try:
@@ -84,7 +71,46 @@ def login():
 
 @app.route('/ticket') #This leads users to the Ticket Page
 def ticket():
-    return render_template('ticket.html')
+        return render_template('ticket.html') 
+        
+@app.route('/ticket', methods=['POST'])
+def add_ticket():
+        if request.method == 'POST':
+            dob = request.form.get('dob')
+            
+            if dob: 
+                try:
+                    dob = datetime.strptime(dob, '%Y-%m-%d').date() #Converts the date of birth string to a date object
+                except ValueError:
+                    return "Invalid date format. Please use YYYY-MM-DD."
+                
+            time = request.form.get('time')
+
+            if time:
+                try:
+                    time = datetime.strptime(time, "%H:%M").time()
+                except ValueError:
+                    return "Invalid date format. Please use H:M."
+        
+            types = request.form.get('types')
+
+            user_ticket = Ticket(dob=dob, time=time, types=types)
+
+            #tickets = Ticket.query.filter_by(types = types).first()
+
+            #if tickets and types:     
+                #return render_template('/ticket.html', message="Your Ticket has been purchase successfully", message_type="success")
+            #else:
+                #return render_template('/ticket.html', message="Please check your Ticket type and Try Again.", message_type="error")
+            
+        try:
+            db.session.add(user_ticket) 
+            db.session.commit()
+            return render_template('/ticket.html') #directs users to the Ticket Page
+        except Exception as e:
+            return f"An error occured: {e}"
+            
+            
 
 @app.route('/hotel') #This leads users to the Hotel Page
 def hotel():

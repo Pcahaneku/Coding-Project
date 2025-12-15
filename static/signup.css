@@ -5,44 +5,7 @@ body{
     color: #F5A754;
 }
 
-.image{
-    display: flex;
-    margin-top: 5px;
-    height: 750%;
-    width: 770px;
-}
-
-.container {
-    position: absolute;
-    right: 300px;
-    width: 250px;
-    margin-top: -900px;
-    margin-right: 370px;
-}
-
-
-.forms{
-    cursor: pointer;
-}
-
-input{
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    text-align: center;
-    color: #F5A754;
-    border-color: #F5A754;
-    border-radius: 20px;
-    border-style: solid;
-}
-
-input::placeholder{
-    color: #F5A754;
-    font-size: 15px;
-    opacity: 0.5;
-}
-
-ul{
+.nav-links{
     display: flex;
     position: sticky;
     top: 0;
@@ -53,10 +16,10 @@ ul{
     justify-content: right;
 }
 
-ul li a, h2{
+ul li a, .header{
     display: flex;
     color: #ffffff;
-    padding: 14px;
+    padding: 15px;
     text-decoration: none;
 }
 
@@ -68,26 +31,84 @@ a:hover{
     color: #000000;
 }
 
-.logo-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo{
-    width: 150px;
-    height: 400%;
-}
-
-h2{
+.header{
+    text-align: center;
     background-color: #ffffff;
     color: #F5A754;
     border-radius: 4px;
-    margin-right: 15px;
+    text-decoration: none;
+    padding: 20px 15px;
+    height: 20px;
+    margin-right: 55px;
+    width: 120px;
+}
+
+/*LOGO*/
+.logo-container{
+    width: 100%;
+}
+
+.logo-container .logo{
+    width: 230px;
+    height: 230px;
+    margin-bottom: -60px;
+    margin-top: -60px;
+}
+
+/*FORMS*/
+.container {
+    position:absolute;
+    top: 30%;
+    right: 25%;
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+}
+
+.forms{
+    cursor: pointer;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    text-align: center;
+    color: #F5A754;
+    border-color: #F5A754;
+    border-radius: 20px;
+    border-style: solid;
+    font-size: 20px;
+}
+
+input::placeholder{
+    color: #F5A754;
+    font-size: 20px;
+    opacity: 0.5;
+    text-align: center;
+}
+
+h4{
+    font-size: 20px;
+}
+
+.image{
+    display: flex;
+    margin-top: 5px;
+    height: 750%;
+    width: 770px;
 }
 
 .link{
     color: #F5A754;
+}
+
+.btn-container{
+
+    text-align: center;
 }
 
 .btn {
@@ -101,10 +122,6 @@ h2{
     cursor: pointer;
     display: inline-block;
     border-radius: 5px;
-}
-
-.text{ 
-    text-align:center;
 }
 
 .foot{

@@ -15,4 +15,15 @@ class User(db.Model):
     def __repr__(self): 
         return f'<User {self.firstname}>'
     
+#Ticket model for the database
+class Ticket(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    User_id = db.Column(db.Integer, foreign_key=True)
+    dob = db.Column(db.Date, nullable=False)
+    time = db.Column(db.Time, nullable=False)
+    types = db.Column(db.String, nullable=False)
+
+    
+
+
     

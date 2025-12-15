@@ -10,25 +10,21 @@
 <body>
 
     <nav>
-        <ul>
+         <ul class="nav-links">
+             <div class="logo-container">
+                <img class="logo" src="/static/Images/Logo.png">
+             </div>
              <li><a href="/">HOME</a></li>
+            <li><a href="/contactus">CONTACT</a></li>
             <li><a href="/guides">GUIDES</a></li>
-            <li><a href="/ticket">TICKET</a></li>
-            <li><a href="/hotel">HOTEL</a></li>
             <li><a href="/login">LOGIN</a></li>
-            <h2>SIGN UP</h2>
+            <h3 class="header">SIGN UP</h3>
         </ul>
-
-        <!--<div class="logo-container">
-            <img class="logo" src="/static/Images/Logo.png" alt="Riget Zoo Adventures Logo">
-        </div>-->
     </nav>
 
 <div>
     <img class="image" src="/static/Images/deer.jpg" alt="An Image of a Deer">
 </div>
-
-
 
 <div class="container"> <!--Users Forms-->
     <h3 class="text">Welcome to RZA</h3>
@@ -44,9 +40,13 @@
         <input type="text" name="user_option" placeholder="Enter an Option">
          
         <p><a class="link" href="{{url_for('login')}}">Already have an account?</a></p>
-        <button type="submit" class="btn">Sign Up</button>
+        <div class="btn-container">
+            <button type="submit" class="btn">Sign Up</button>
+        </div>
     </form>
 </div>
+
+    <script src="/static/homepage.js"></script>
 
 <div class="foot">
     <footer>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +11,18 @@
     
     <nav>
         <ul class="nav-links">
-            <li><a href="/aboutus">ABOUT US</a></li>
+             <div class="logo-container">
+                <img class="logo" src="/static/Images/Logo.png">
+        </div>
+            <li><a href="/#aboutus">ABOUT US</a></li>
+            <li><a href="/#contactus">CONTACT</a></li>
             <li><a href="/guides">GUIDES</a></li>
-            <li><a href="/ticket">TICKET</a></li>
-            <li><a href="/hotel">HOTEL</a></li>
             <li><a href="/login">LOGIN</a></li>
-            <h2><a  class="header" href="/signup">SIGN UP</a></h2>
+            <h3><a  class="header" href="/signup">SIGN UP</a></h3>
         </ul>
     </nav>
 
-    <div>
+    <div class="pic-container">
         <div class="image-container">
             <img class="image" src="/static/Images/Zebras.jpg" alt="Image of Zebras">
         </div>
@@ -29,11 +32,11 @@
         </div>
 
         <div class="btn-container">
-            <a class="btn" href="/ticket"><b>BOOK NOW!</a>
+            <a class="btn" href="/signup"><b>BOOK NOW!</a>
         </div>
     </div>
 
-    <div>
+    <div class="offer-container">
         <h1 class="offer">What We Offer</h1>
     </div>
 
@@ -61,7 +64,7 @@
                 <li>Discounts Included to <br>memebers</li>
             </ul>
             <div class="htl-container">
-                <a class="htl" href="/hotel">Book A Hotel</a>
+                <a class="htl" href="/signup.html">Book A Hotel</a>
             </div>
         </div>
     </div>
@@ -69,25 +72,44 @@
     <!-- About Us -->
     <div class="about-section">
         <div class="about-container"> 
-            <h2 class="us">About Us</h2>
+            <h2 id="aboutus" class="us">About Us</h2>
         </div>
         <div class="text-container">
-            <p class="text">Riget Zoo Adventures is Safari-Style wildlife zoo that offers <br> several things such as onsite hotel, educational visits for schools and students, with educatonal guides that supports your stay. </p>
+            <p class="text">Riget Zoo Adventures is Safari-Style wildlife zoo that offers <br> several things such as on-site hotel, educational visits for schools and students, with educatonal guides that supports your stay. </p>
         </div>
     </div>
-
+    
+    <!--Contact Us-->
     <div class="contact-container">
-        <div class="CU">
-            <h2 class="contact">Contact Us</h2>
-        </div>
-        <div>
-            <p class="semi">We Are Here To Help!</p>
-            <p class="para">Here at Riget Zoo Adventures helping <br> our customers is at the heart of what we do. </p>
-        </div>
+        <div class="users">
+            <div>
+                <h2 id="contactus" class="contact">Contact Us</h2>
+            </div>
+            <div>
+                <p class="semi">We Are Here To Help!</p>
+                <p class="para">Here at Riget Zoo Adventures helping <br> our customers is at the heart of what we do. </p>
+            </div>
+    
+            <div class="enquiry-container">
+                <form class="enquiry">
+                    <input type="text" name="firstname" placeholder="First Name" required> 
+                    <input type="text" name="enquiry" placeholder="Please state your enquiry." required></input><br><br>
 
+                    <button class="submit" type="submit">Send Enquiry</a></button>
+                </form>
+            </div>
+        </div>
         <div class="giraffe-container">
             <img class="giraffe" src="/static/Images/Giraffe.jpg" alt="Giraffe">
         </div>
+    </div>
+    
+    <script src="/static/homepage.js"></script>
+
+    <div class="foot-container">
+        <footer class="foot">
+            <p class="graph">@ 2025 Riget Zoo Adventures</p>
+        </footer>
     </div>
 
 </body>

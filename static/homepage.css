@@ -3,28 +3,30 @@ body{
     background-color:#FFFDFA;
     margin: 0;
     color: #F5A754;
+    padding: 0;
 }
 
 .nav-links{
     display: flex;
-    position: sticky;
-    top: 0;
     list-style-type:none;
     margin: 0;
     padding: 0;
     background-color: #F5A754;
     justify-content: right;
+    width: 100%;
 }
 
 ul li a, .header{
     display: flex;
     color: #ffffff;
-    padding: 14px;
+    padding: 15px;
     text-decoration: none;
+    
 }
 
 li a {
     margin-top: 25px;
+    align-items: center;
 }
 
 a:hover{
@@ -32,21 +34,22 @@ a:hover{
 }
 
 .header{
+    text-align: center;
     background-color: #ffffff;
     color: #F5A754;
     border-radius: 4px;
-    margin-right: 15px;
     text-decoration: none;
-    padding: 10px;
+    padding: 20px 15px;
+    margin-right: 55px;
+    width: 90px;
 }
 
 .image-container{
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    width: 2550px;
-    height: 1000px;
-    
+    width: 100%;
+    height: 900px; 
 }
 
 .image-container img{
@@ -55,7 +58,22 @@ a:hover{
     object-fit: cover;
     opacity: 0.6;
     margin-bottom: 0%;
-    
+}
+
+/*LOGO*/
+.logo-container{
+    width: 100%;
+}
+
+.logo-container .logo{
+    width: 230px;
+    height: 230px;
+    margin-bottom: -60px;
+    margin-top: -60px;
+}
+
+.welcome-container{
+    height: 100%;
 }
 
 .welcome{
@@ -65,11 +83,7 @@ a:hover{
     margin-bottom: 12px;
     margin-top: -750px;
     font-weight: bold;
-    font-size: 45px;
-}
-
-.welcome-container{
-    height: 100%;
+    font-size: 40px;
 }
 
 .btn{
@@ -94,11 +108,15 @@ a:hover{
     color: #000000;
 }
 
+.offer-container{
+    width: 100%;
+}
+
 .offer{
     position: relative;
     color: #000000;
-    margin-left: 350px;
-    margin-top: 150px;
+    margin-left: 150px;
+    margin-top: 15%;
 }
 
 /*BOOKING CONTAINER*/
@@ -115,16 +133,20 @@ a:hover{
     text-align: center;
     background-color: #D0E6FF;
     color: #000000;
-    padding: 180px;
+    padding: 80px;
+    margin-bottom: 70px;
     border-radius: 10px;
     border: 1px solid #7CB9FF;
+    
 }
 
 .types{
     color: #7CB9FF;
-    margin-top: -100px;
+    margin-top: -60px;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    width: 100%;
+
 }
 
 .tickets{
@@ -159,8 +181,8 @@ a:hover{
     text-align: center;
     background-color: #D0E6FF;
     color: #000000;
-    padding: 180px;
-    padding-bottom: 30px;
+    padding: 80px;
+    margin-bottom: 70px;
     border-radius: 10px;
     border: 1px solid #7CB9FF;
 }
@@ -168,9 +190,10 @@ a:hover{
 
 .bookings{
     color: #7CB9FF;
-    margin-top: -100px;
+    margin-top: -60px;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    width: 100%;
 }
 
 .hotels{
@@ -204,14 +227,14 @@ a:hover{
 .about-section{
     display: block;
     margin-bottom: 90px;
-    
+    margin-top: -80px;
 }
 
 .us{
     margin-bottom: -10px;
     text-align: center;
     font-weight: bolder;
-    font-size: 45px;
+    font-size: 35px;
     color: #000000;
 }
 
@@ -225,37 +248,93 @@ a:hover{
 /*CONTACT US*/
 .contact-container{
     width: 100%;
-   
+}
+
+.users{
+    display: block;
+    width: 100%;
+    margin-bottom: -100px;
 }
 
 .contact{
-    
-    margin-left: 20px;
+    margin-left: 150px;
     color: #000000;
-    font-size: 45px;
+    font-size: 35px;
     font-weight: bolder;
     margin-bottom: -10px;
 }
 
 .semi{
-    margin-left: 20px;
+    margin-left: 150px;
     font-weight:700;
     font-size: x-large;
     color: #000000;
 }
 
 .para{
-    margin-left: 20px;
+    margin-left: 150px;
     font-weight: lighter;
     font-size: x-large;
     color: #000000;
 }
 
 .giraffe-container{
-  
+    float: right;
+    width: 100%;
 }
 
-.giraffe-conainer, .giraffe{
-     float: left;
+.giraffe-container, .giraffe{
+     width: 200px;
+     margin-left: -150px; 
+     margin-top: -30px;
+}
 
+/*FORMS*/
+.enquiry-container{
+    width: 100%;
+}
+
+.enquiry{
+   width: 490px;
+   height: 30px;
+   padding: 10px;
+   font-size: 20px;
+   margin-bottom: -10px;
+   margin-left: 150px;
+   text-align: center;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    text-align: center;
+    border-color: #7CB9FF;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.submit{
+    background-color: #7CB9FF;
+    border-style: none;
+    padding: 10px 30px;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+
+
+.foot-container{
+    display: flex;
+    
+    width: 100%;
+}
+
+.foot{
+    background-color: #F5A754;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-weight: lighter;
 }

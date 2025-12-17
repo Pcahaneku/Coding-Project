@@ -1,4 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy 
 
 db = SQLAlchemy()
 
@@ -18,7 +18,8 @@ class User(db.Model):
 #Ticket model for the database
 class Ticket(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    User_id = db.Column(db.Integer, foreign_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('ticket', lazy=True))
     dob = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
     types = db.Column(db.String, nullable=False)
